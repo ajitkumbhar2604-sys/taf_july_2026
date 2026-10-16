@@ -2,6 +2,15 @@ import os
 import json
 from pyspark.sql.types import StructType,ArrayType
 from pyspark.sql.functions import col, explode_outer
+
+
+def read_query(dir_path):
+    sql_query_path = os.path.join(dir_path, 'transformation.sql')
+    with open(sql_query_path) as f:
+        query = f.read()
+    return query
+
+
 def read_schema(dir_path):
     schema_path= os.path.join(dir_path, "schema.json")
 

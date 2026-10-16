@@ -1,7 +1,8 @@
 #add read_file here
 
 from src.utility.helpers import read_schema,flatten
-def read_file(spark, file_type, file_path, file_config,dir_path):
+def  \
+        read_file(spark, file_type, file_path, file_config,dir_path):
     file_type =  file_type.lower()
 
     if file_type == "csv":
@@ -28,6 +29,7 @@ def read_file(spark, file_type, file_path, file_config,dir_path):
     elif file_type == "txt":
         df = spark.read.csv(file_path, header=True, inferSchema=True)
     elif file_type == "xml":
+        
         df = spark.read.format('xml').load(file_path)
 
     return df

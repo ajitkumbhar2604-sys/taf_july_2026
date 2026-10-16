@@ -1,2 +1,2 @@
-def test_sample2(read_config):
+def test_sample_2(read_config):
     assert True
